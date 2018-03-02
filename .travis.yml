@@ -6,7 +6,8 @@ osx_image: xcode9.2
 
 # Build dependencies
 install:
-  - brew install python3
+  - brew install python3 clang-format
+  - clang-format --version
   - sudo gem install asciidoctor
   - ( cd External && ./makeAll )
 
@@ -17,3 +18,5 @@ cache:
 
 script:
   - xcodebuild -scheme "MoltenVK (Debug)"
+
+
